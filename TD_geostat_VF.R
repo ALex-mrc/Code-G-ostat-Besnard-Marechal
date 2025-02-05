@@ -135,10 +135,6 @@ mtext("Répartition des ménages selon la richesse à Bogota", side = 3, line = 
 
 par(mar = c(5, 4, 4, 2), fig = c(0,1,0,1))
 
-
-
-
-
 ###### Partie 2 : Calcul et affichage du lissage pondéré appliqué aux nombres de ménages ######
 
 #### Partie 2.1 : Calcul de la distance au plus proche voisin (ppv) ####
@@ -167,9 +163,6 @@ plot(Bogota.ppp, which.marks = "SECTO1_05", maxsize = max(Bogota.ppp$marks), col
 marks(Bogota.ppp) <- data.frame(SECTO6_05 = Bogota$SECTO6_05) # pour attacher les valeurs attributaires au semis de points (ICS6 en 2005 uniquement)
 plot(Smooth(Bogota.ppp, sigma = 4000, weights = Bogota.ppp$marks, eps = c(10,10)),main = "ICS6 - Les plus riches", col = rev(heat.colors(8)))
 plot(Bogota.ppp, which.marks = "SECTO6_05", maxsize = max(Bogota.ppp$marks), cols = "white", bg = "grey20", add = TRUE) # pour ajouter les effectifs des ménages les plus riches en cercles proportionnels
-
-
-
 
 
 #### Partie 2.4 : Cartographie complète : lissage, mise en carte, ajout d'éléments de légendes ####
@@ -228,12 +221,7 @@ ajouter_echelle_graphique_km <- function(longueur_echelle_km,
        labels = paste0(longueur_echelle_km, " km"), 
        cex = text_cex, font = 1)}
 
-
-
-
 ## Carte ISC 1 ##
-
-
 # Affichage de la carte lissée 
 marks(Bogota.ppp) <- data.frame(SECTO1_05 = Bogota$SECTO1_05)
 plot(Smooth(Bogota.ppp, sigma = 2500, weights = Bogota.ppp$marks, eps = c(5, 5)), #Définition du SIGMA en fonction des résultats du semi variogramme et résolution à m
@@ -271,11 +259,7 @@ mtext("Nombre de ménages les plus pauvres (ICS1)", side = 3, line = 0.3, outer 
 
 mtext(text = "N\n\u2191", side = 3, line = -2, outer = FALSE, adj = 0.15, cex = 0.8) # Ajout flèche du N
 
-
-
 # Ajout flèche pour localiser les clusters les plus importants
-
-
 
 ## Soacha et Bosa ##
 
@@ -301,8 +285,6 @@ arrows(x0 = x_start, y0 = y_start, x1 = x_end, y1 = y_end,
 
 mtext("Soacha \net Bosa", side = 3, line = -17.2, outer = FALSE, cex = 0.8, adj = 0.156) # Affichage étiquette
 
-
-
 ## Bilbao et Tuna##
 
 # Flèche 3
@@ -316,10 +298,6 @@ arrows(x0 = x_start, y0 = y_start, x1 = x_end, y1 = y_end,
        length = 0.1, angle = 30, col = "black", lwd = 1.75)
 
 mtext("Bilbao et Tuna", side = 3, line = -5.5, outer = FALSE, cex = 0.8, adj = 0.400)# Affichage étiquette
-
-
-
-
 
 ## Carte ISC 6 ##
 
@@ -358,10 +336,6 @@ mtext("Minimum = 0 ", side = 3, line = -9, outer = FALSE, cex = 0.8, adj = 0.173
 mtext("Mediane = 249 ", side = 3, line = -8, outer = FALSE, cex = 0.8, adj = 0.173) # Ajout mediane
 mtext("Maximum = 2975", side = 3, line = -7, outer = FALSE, cex = 0.8, adj = 0.177) # Ajout max
 
-
-
-
-
 ## San andres et Colsubsidio ##
 
 # Flèche 4 
@@ -376,8 +350,6 @@ arrows(x0 = x_start, y0 = y_start, x1 = x_end, y1 = y_end,
        length = 0.1, angle = 30, col = "black", lwd = 1.75)
 mtext("San andres et \n Colsubsidio", side = 3, line = -4, outer = FALSE, cex = 0.8, adj = 0.390) # Affichage étiquette
 
-
-
 ## Teusaquillo ##
 
 # Flèche 5 
@@ -391,11 +363,6 @@ y_end <- grconvertY(0.50, from = "ndc", to = "user")
 arrows(x0 = x_start, y0 = y_start, x1 = x_end, y1 = y_end, 
        length = 0.1, angle = 30, col = "black", lwd = 1.75)
 mtext("Teusaquillo", side = 3, line = -15, outer = FALSE, cex = 0.8, adj = 0.216) # Affichage étiquette
-
-
-
-
-
 
 ## Usaquen ##
 
